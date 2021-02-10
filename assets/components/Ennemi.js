@@ -14,8 +14,8 @@ const Ennemi = () => {
             top:100,
             bottom:500 ,
             left:250,
-            width: 150,
-            height: 150,
+            width: 120,
+            height: 120,
             background: `url(${Ennemis})`
 
         }}></View>
@@ -24,8 +24,8 @@ const Ennemi = () => {
             position: 'absolute',
             top:500,
             left:250,
-            width: 150,
-            height: 150,
+            width: 120,
+            height: 120,
             background: `url(${Ennemis})`
         }}></View>
 
