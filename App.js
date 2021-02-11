@@ -9,6 +9,18 @@ import  Oiseau from './assets/components/Oiseau'
 import  Sol from './assets/components/Sol'
 import  Ennemi from './assets/components/Ennemi'
 
+//test
+
+
+   return {
+   height: 100,
+   width: 50,
+   marginTop: 10,
+   backgroundColor : "red",
+   marginLeft: gauche, }
+}
+
+// fin test
 export default function App() {
   return (
     <View
