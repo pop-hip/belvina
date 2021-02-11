@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import Ennemis from '../images/Ennemis.png'
 
-const Ennemi = () => {
+const Ennemi = ({DeplacementEnnemi}) => {
     return (
         // La div (view) permet de gérer directement le style de nos ennemies , ici il y a une grand div pour mettre toutes les div dedans de manière à créer pleins ennemis
         <View
@@ -14,7 +14,7 @@ const Ennemi = () => {
             position: 'absolute',
             top:100,
             bottom:500 ,
-            left:250,
+            left: DeplacementEnnemi,
             width: 120,
             height: 120,
             background: `url(${Ennemis})`
@@ -24,7 +24,7 @@ const Ennemi = () => {
             <View style={{
             position: 'absolute',
             top:500,
-            left:250,
+            left: DeplacementEnnemi,
             width: 120,
             height: 120,
             background: `url(${Ennemis})`

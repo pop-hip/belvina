@@ -29,10 +29,20 @@ export default function App() {
       <StatusBar style="auto" />
       <Oiseau
       DeplacementOiseau = {DeplacementOiseau} />
-      <Ennemi />
+      
       <Sol />
     </View>
   );
+  const [DeplacementEnnemi, setDeplacementEnnemi] = useState(250);
+  var a = 1;
+  const boucle = () => {
+    while (a=a) {
+      setDeplacementEnnemi(DeplacementEnnemi - 10);
+
+    }
+    setTimeout(boucle, 500)
+  }
+    return (<Ennemi  DeplacementEnnemi = {DeplacementEnnemi}/>)
 }
 
 const styles = StyleSheet.create({
