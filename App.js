@@ -1,7 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useState } from 'react';
+<<<<<<< HEAD
 import { StyleSheet, View } from 'react-native';
 
+=======
+import { StyleSheet, View, Button, TouchableOpacity} from 'react-native';
+>>>>>>> 6b690bc33237dcf2383e1e5299aadc52a6bc2785
 // jimporte le perso principale qui se situe dans les composants
 
 import Night from './assets/images/night.jpg'
@@ -22,6 +26,8 @@ import  Ennemi from './assets/components/Ennemi'
 
 // fin test
 export default function App() {
+
+  const [DeplacementOiseau, setDeplacementOiseau] = useState(0);
   return (
     <View
     style={{
@@ -31,8 +37,15 @@ export default function App() {
      background: `url(${Night})`
 
    }}>
+  
+     <Button
+     onPress={() =>  setDeplacementOiseau(DeplacementOiseau + 10) }
+     title="Avancer"
+      
+     />
       <StatusBar style="auto" />
-      <Oiseau />
+      <Oiseau
+      DeplacementOiseau = {DeplacementOiseau} />
       <Ennemi />
       <Sol />
     </View>
