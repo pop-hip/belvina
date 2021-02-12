@@ -29,7 +29,7 @@ export default function App() {
       <StatusBar style="auto" />
       <Oiseau
       DeplacementOiseau = {DeplacementOiseau} />
-      
+      <Ennemi  DeplacementEnnemi = {DeplacementEnnemi}/>
       <Sol />
     </View>
   );
@@ -38,11 +38,10 @@ export default function App() {
   const boucle = () => {
     while (a=a) {
       setDeplacementEnnemi(DeplacementEnnemi - 10);
-
+      console.log('dep +1')
     }
     setTimeout(boucle, 500)
   }
-    return (<Ennemi  DeplacementEnnemi = {DeplacementEnnemi}/>)
 }
 
 const styles = StyleSheet.create({
