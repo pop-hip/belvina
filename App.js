@@ -12,19 +12,31 @@ export default function App() {
 
    const [HauteurOiseau, setHauteurOiseau] = useState(450);
 
-//déplacement ennemi vers la gauche
+//tentative de déplacement ennemi vers la gauche
   const [DeplacementEnnemi, setDeplacementEnnemi] = useState(250);
-  var a = 1;
+  /*var a = 1;
   const boucle = () => {
     while (a=a) {
       setDeplacementEnnemi(DeplacementEnnemi - 10);
       console.log('dep +1')
     }
     setTimeout(boucle, 500)
-  }
-let gravityTimerId              //variable dans laquelle on implante l'intervale pour la gravité de Bird()
+  }*/
+  let depEnTimerId
+  useEffect(() => {
+    if (DeplacementEnnemi > 0) {
+      depEnTimerId = setInterval(()=> {
+        setDeplacementEnnemi(DeplacementEnnemi -3)
+      }, 30)
+    }
+    return () => {
+      clearInterval(depEnTimerId)
+    }
+  },[DeplacementEnnemi])
+
+  let gravityTimerId              //variable dans laquelle on implante l'intervale pour la gravité de Bird()
   
-useEffect(() => {                                  // le useEffect permet de
+  useEffect(() => {                                  // le useEffect permet de
   if (HauteurOiseau > 0 ) {                       //L'oiseau ne va pas plus bas que 0
       gravityTimerId = setInterval(() => {       //on initialise l'intervale entre la hauteur actuelle de l'oiseau -3 pour la gravité de l'oiseau
       setHauteurOiseau(HauteurOiseau - 3)       //applique la gravité à la positon de Bird()
@@ -33,7 +45,7 @@ useEffect(() => {                                  // le useEffect permet de
   return () => {
     clearInterval(gravityTimerId)
   }
-}, [HauteurOiseau])
+  }, [HauteurOiseau])
 
 
  
