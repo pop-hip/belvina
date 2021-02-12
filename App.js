@@ -9,7 +9,15 @@ import  Sol from './assets/components/Sol'
 import  Ennemi from './assets/components/Ennemi'
 
 export default function App() {
-
+  const [DeplacementEnnemi, setDeplacementEnnemi] = useState(250);
+  var a = 1;
+  const boucle = () => {
+    while (a=a) {
+      setDeplacementEnnemi(DeplacementEnnemi - 10);
+      console.log('dep +1')
+    }
+    setTimeout(boucle, 500)
+  }
   const [DeplacementOiseau, setDeplacementOiseau] = useState(0);
   return (
     <View
@@ -33,15 +41,6 @@ export default function App() {
       <Sol />
     </View>
   );
-  const [DeplacementEnnemi, setDeplacementEnnemi] = useState(250);
-  var a = 1;
-  const boucle = () => {
-    while (a=a) {
-      setDeplacementEnnemi(DeplacementEnnemi - 10);
-      console.log('dep +1')
-    }
-    setTimeout(boucle, 500)
-  }
 }
 
 const styles = StyleSheet.create({
