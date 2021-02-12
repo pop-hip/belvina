@@ -5,12 +5,14 @@ import Night from './assets/images/night.jpg'
 import  Oiseau from './assets/components/Oiseau'
 import  Sol from './assets/components/Sol'
 import  Ennemi from './assets/components/Ennemi'
+
 export default function App() { 
   //Permet de faire la gravité de notre oiseau
    const [DeplacementOiseau, setDeplacementOiseau] = useState(0);
+
    const [HauteurOiseau, setHauteurOiseau] = useState(450);
 
-export default function App() {
+//déplacement ennemi vers la gauche
   const [DeplacementEnnemi, setDeplacementEnnemi] = useState(250);
   var a = 1;
   const boucle = () => {
@@ -20,7 +22,6 @@ export default function App() {
     }
     setTimeout(boucle, 500)
   }
-  const [DeplacementOiseau, setDeplacementOiseau] = useState(0);
 let gravityTimerId              //variable dans laquelle on implante l'intervale pour la gravité de Bird()
   
 useEffect(() => {                                  // le useEffect permet de
@@ -52,7 +53,6 @@ useEffect(() => {                                  // le useEffect permet de
       <Oiseau DeplacementOiseau = {DeplacementOiseau} 
         HauteurOiseau = {HauteurOiseau} />
       <Ennemi  DeplacementEnnemi = {DeplacementEnnemi}/>
-      <Ennemi />
       <Sol />
     </View>
   );
